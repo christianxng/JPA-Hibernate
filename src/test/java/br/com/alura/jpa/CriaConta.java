@@ -20,6 +20,7 @@ public class CriaConta {
         entityManager.persist(conta2);
         entityManager.persist(conta3);
         entityManager.getTransaction().commit();
+        entityManager.close();
         entityManagerFactory.close();
     }
 

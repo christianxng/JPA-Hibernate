@@ -9,6 +9,7 @@ public class ConectandoBanco {
     public static void main (String[] args){
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("connection");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
+        entityManager.close();
         entityManagerFactory.close();
     }
 }

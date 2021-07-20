@@ -32,6 +32,7 @@ public class Movimentacao {
 
     }
 
+    public Movimentacao(){}
 
     public Long getId() {
         return id;

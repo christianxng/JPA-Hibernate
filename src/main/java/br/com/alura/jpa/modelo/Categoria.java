@@ -12,8 +12,23 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Categoria(String nome) {
+        this.nome = nome;
+    }
+
+    public Categoria(){}
+
+    @Override
+    public String toString() {
+        return nome + " - " +  id;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -25,8 +40,4 @@ public class Categoria {
     }
 
     private String nome;
-
-    public Categoria(String nome) {
-        this.nome = nome;
-    }
 }

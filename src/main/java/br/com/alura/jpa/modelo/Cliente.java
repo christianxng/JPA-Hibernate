@@ -1,9 +1,6 @@
 package br.com.alura.jpa.modelo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Cliente {
@@ -14,6 +11,15 @@ public class Cliente {
     private String nome;
     private String profissao;
     private String endereco;
+    @JoinColumn(unique = true)
+    @OneToOne
+    private Conta conta;
+
+    public Cliente(String nome, String profissao, String endereco) {
+        this.nome = nome;
+        this.profissao = profissao;
+        this.endereco = endereco;
+    }
 
     public Long getId() {
         return Id;
@@ -43,9 +49,11 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public Cliente(String nome, String profissao, String endereco) {
-        this.nome = nome;
-        this.profissao = profissao;
-        this.endereco = endereco;
+    public Conta getConta() {
+        return conta;
+    }
+
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
 }

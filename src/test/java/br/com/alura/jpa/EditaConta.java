@@ -5,6 +5,7 @@ import br.com.alura.jpa.modelo.Conta;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.math.BigDecimal;
 
 public class EditaConta {
     public static void main (String[] args) {
@@ -15,7 +16,7 @@ public class EditaConta {
         entityManager.getTransaction().begin();
         Conta conta = entityManager.find(Conta.class, 1L);
         // editando saldo
-        conta.setSaldo(50000.00);
+        conta.setSaldo(new BigDecimal("50000.0"));
         entityManager.getTransaction().commit();
         entityManager.close();
 

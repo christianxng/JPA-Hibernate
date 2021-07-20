@@ -19,7 +19,7 @@ public class TestaRelacionamentoContaMovimentacao {
                 "Venda de telefone",
                 new BigDecimal("6000.0")
         );
-        Conta conta =  new Conta("Christian Roddrigues Moura",3636,5000,2.500);
+        Conta conta =  new Conta("Christian Roddrigues Moura",3636,5000,new BigDecimal("2.500"));
         movimentacao.setConta(conta);
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("connection");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
